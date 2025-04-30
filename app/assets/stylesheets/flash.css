@@ -1,0 +1,53 @@
+.messages-container {
+    position: fixed;
+    top: 150px;
+    right: -500px;
+
+    padding: 8px;
+    border-radius: 6px;
+    max-width: 400px;
+
+    filter: drop-shadow(1.5px 1.5px 5px #39525a);
+
+    z-index: 10000;
+
+    transition: all 0.3s ease-in-out;
+
+    background-color: #39525a !important;
+}
+
+.messages-container.show {
+    right: 20px;
+}
+
+#alert-container {
+    top: 200px;
+}
+
+.message-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.notif-close {
+    margin: 0;
+    margin-left: 10px;
+
+    transition: all 0.3s;
+}
+
+.notif-close:hover {
+    cursor: pointer;
+}
+
+.message {
+    font-family: "Press Start 2P", monospace;
+    font-size: 1.4em;
+
+}
+
+#alert {
+    color: red;
+}
