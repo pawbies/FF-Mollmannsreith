@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :require_chef!, only: %i[ new create ]
-  before_action :set_user, only: %i[ show ]
+  before_action :require_chef!, only: %i[ new create edit update destroy ]
+  before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
     @users = User.all
@@ -21,6 +21,23 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update user_params
+      redirect_to users_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @user.destroy!
+
+    redirect_to users_path
   end
 
   private

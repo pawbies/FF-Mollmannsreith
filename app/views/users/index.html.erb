@@ -15,9 +15,11 @@
             <tr>
                 <td><%= user.email_address %></td>
                 <td><%= user.full_name %></td>
-                <td><%= user.rank.humanize %></td>
-                <td>
+                <td><%= user.rank.germanize %></td>
+                <td style="display: flex;">
                     <%= link_to "Ansehen", user %>
+                    <%= link_to "Bearbeiten", edit_user_path(user) %>
+                    <%= button_to "Löschen", user, method: :delete, data: { turbo_confirm: "#{user.rank.germanize} #{user.full_name} wirklich löschen?" } %>
                 </td>
             </tr>
         <% end %>

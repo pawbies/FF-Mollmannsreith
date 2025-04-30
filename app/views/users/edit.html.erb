@@ -1,4 +1,4 @@
-<h1>Neuer Benutzer</h1>
+<h1>Benutzer bearbeiten</h1>
 
 <%= form_with model: @user do |form| %>
     <% if @user.errors.any? %>
@@ -14,6 +14,6 @@
     <%= form.text_field :lastname, placeholder: "Nachname" %>
     <%= form.password_field :password, placeholder: "Passwort" %>
     <%= form.password_field :password_confirmation, placeholder: "Passwort wiederholen" %>
-    <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.germanize, rank ] } %>
+    <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.humanize, rank ] } %>
     <%= form.submit %>
 <% end %>
