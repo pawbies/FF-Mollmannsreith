@@ -1,19 +1,23 @@
-<h1>Benutzer bearbeiten</h1>
+<div id="edituser-container">
+    <div id="edituser-wrapper">
+        <h1>Benutzer bearbeiten</h1>
 
-<%= form_with model: @user do |form| %>
-    <% if @user.errors.any? %>
-        <ul>
-            <% @user.errors.full_messages.each do |error| %>
-                <li style="color: red;"><%= error %></li>
-            <% end  %>
-        </ul>
-    <% end %>
+        <%= form_with model: @user, id: "form-edituser" do |form| %>
+            <% if @user.errors.any? %>
+                <ul>
+                    <% @user.errors.full_messages.each do |error| %>
+                        <li style="color: red;"><%= error %></li>
+                    <% end  %>
+                </ul>
+            <% end %>
 
-    <%= form.email_field :email_address, placeholder: "E-Mail" %>
-    <%= form.text_field :firstname, placeholder: "Vorname" %>
-    <%= form.text_field :lastname, placeholder: "Nachname" %>
-    <%= form.password_field :password, placeholder: "Passwort" %>
-    <%= form.password_field :password_confirmation, placeholder: "Passwort wiederholen" %>
-    <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.humanize, rank ] } %>
-    <%= form.submit %>
-<% end %>
+            <%= form.email_field :email_address, class: "input-edituser", placeholder: "E-Mail" %>
+            <%= form.text_field :firstname, class: "input-edituser", placeholder: "Vorname" %>
+            <%= form.text_field :lastname, class: "input-edituser", placeholder: "Nachname" %>
+            <%= form.password_field :password, class: "input-edituser", placeholder: "Passwort" %>
+            <%= form.password_field :password_confirmation, class: "input-edituser", placeholder: "Passwort wiederholen" %>
+            <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.humanize, rank ] }, {}, {id: "select-edituser"} %>
+            <%= form.submit id: "submit-edituser" %>
+        <% end %>
+    </div>
+</div>
