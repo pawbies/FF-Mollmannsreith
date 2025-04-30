@@ -9,13 +9,27 @@
     background-color: rgb(118, 94, 94);
 }
 
+.badground {
+    position: absolute;
+    width: 25vw;
+    filter: blur(10px);
+}
+
+#badgroundLeft {
+    left: 2vw;
+}
+
+#badgroundRight {
+    right: 2vw;
+}
+
 #outer-decor {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 95vw;
-    height: 95vh;
+    width: 40vw;
+    height: 60vh;
 
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
 
