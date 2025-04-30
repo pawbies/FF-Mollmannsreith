@@ -1,0 +1,19 @@
+<h1>Neuer Benutzer</h1>
+
+<%= form_with model: @user do |form| %>
+    <% if @user.errors.any? %>
+        <ul>
+            <% @user.errors.full_messages.each do |error| %>
+                <li style="color: red;"><%= error %></li>
+            <% end  %>
+        </ul>
+    <% end %>
+
+    <%= form.email_field :email_address, placeholder: "E-Mail" %>
+    <%= form.text_field :firstname, placeholder: "Vorname" %>
+    <%= form.text_field :lastname, placeholder: "Nachname" %>
+    <%= form.password_field :password, placeholder: "Passwort" %>
+    <%= form.password_field :password_confirmation, placeholder: "Passwort wiederholen" %>
+    <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.humanize, rank ] } %>
+    <%= form.submit %>
+<% end %>
