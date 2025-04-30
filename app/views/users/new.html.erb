@@ -17,7 +17,7 @@
             <%= form.password_field :password, class: "input-newuser", placeholder: "Passwort" %>
             <%= form.password_field :password_confirmation, class: "input-newuser", placeholder: "Passwort wiederholen" %>
             <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.germanize, rank ] }, {}, {id: "select-newuser"} %>
-            <%= form.submit id: "submit-newuser" %>
+            <%= form.submit "Benutzer erstellen", id: "submit-newuser" %>
         <% end %>
     </div>
 </div>
