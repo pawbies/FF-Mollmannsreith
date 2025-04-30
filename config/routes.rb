@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-  get "log" => "pages#log"
+  get "log" => "logs#index"
+  get "log/:id" => "logs#show"
 end
