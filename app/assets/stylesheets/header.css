@@ -19,6 +19,10 @@ header {
     height: 20vh;
 }
 
+#logo-header {
+    border-radius: 15px;
+}
+
 #link-container {
     display: flex;
     flex-direction: row;
