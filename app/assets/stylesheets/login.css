@@ -94,6 +94,13 @@
 
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
     background-color: aliceblue;
+
+    transition: all ease 0.5s;
+}
+
+#submit-login:hover {
+    background-color: rgb(217, 226, 233);
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.7);
 }
 
 #forgot-link {

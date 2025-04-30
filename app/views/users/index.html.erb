@@ -1,27 +1,36 @@
-<h1>Benutzerliste</h1>
-<%= link_to "Neuer Benutzer", new_user_path %>
+<div id="all-users-container">
 
-<table>
-    <thead>
-        <tr>
-            <th>Email</th>
-            <th>Name</th>
-            <th>Dienstgrad</th>
-            <th>Aktionen</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @users.each do |user| %>
+    <h1>Benutzerliste</h1>
+
+    <%= link_to "Neuer Benutzer", new_user_path, id: "new-user" %>
+
+    <table id="usertable">
+        <thead id="userhead">
             <tr>
-                <td><%= user.email_address %></td>
-                <td><%= user.full_name %></td>
-                <td><%= user.rank.germanize %></td>
-                <td style="display: flex;">
-                    <%= link_to "Ansehen", user %>
-                    <%= link_to "Bearbeiten", edit_user_path(user) %>
-                    <%= button_to "Löschen", user, method: :delete, data: { turbo_confirm: "#{user.rank.germanize} #{user.full_name} wirklich löschen?" } %>
-                </td>
+                <th class="userth">Email</th>
+                <th class="userth">Name</th>
+                <th class="userth">Dienstgrad</th>
+                <th class="userth">Aktionen</th>
             </tr>
-        <% end %>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <td class="usertd"><%= user.email_address %></td>
+                    <td class="usertd"><%= user.full_name %></td>
+                    <td class="usertd"><%= user.rank.germanize %></td>
+                    <td class="usertd" style="display: flex;">
+                        <%= link_to "Ansehen", user, class: "action-btn" %>
+                        <%= link_to "Bearbeiten", edit_user_path(user), class: "action-btn" %>
+                        <%= button_to "Löschen", user, 
+                          method: :delete, 
+                          id: "delete-user", 
+                          class: "action-btn",
+                          data: { turbo_confirm: "#{user.rank.germanize} #{user.full_name} wirklich löschen?" } 
+                        %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

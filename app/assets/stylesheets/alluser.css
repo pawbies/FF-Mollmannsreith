@@ -1,0 +1,86 @@
+#all-users-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 100vw;
+
+}
+
+#new-user {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    text-decoration: none;
+    color: #ddd;
+    border-radius: 5px;
+
+    background-color: rgb(42, 61, 77);
+}
+
+#usertable {
+    width: 80vw;
+
+    border-collapse: collapse;
+
+    font-family: "Yu Gothic Light";
+    font-weight: 800;
+}
+
+#userhead {
+    background-color: beige;
+}
+
+.userth {
+    padding: 5px 0;
+    font-size: 1.2rem;
+}
+
+tr {
+    border: 2px solid #ddd;
+    transition: background-color 0.2s;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.usertd {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.action-btn {
+    margin-right: 10px;
+    padding: 5px 10px;
+
+    text-decoration: none;
+    color: white;
+    
+    border: none;
+    border-radius: 5px;
+
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    background-color: #1055a0;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #0a1f34;
+}
+
+#delete-user {
+    height: 100%;
+
+    background-color: #DC3545;
+    transition: all 0.2s;
+}
+
+#delete-user:hover {
+    background-color: #720712;
+
+}
