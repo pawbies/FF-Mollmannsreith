@@ -5,9 +5,31 @@
 
     width: 100vw;
     height: 100vh;
+
+    background-color: rgb(118, 94, 94);
+}
+
+#outer-decor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 95vw;
+    height: 95vh;
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+
+    border-radius: 50px;
+
+    background-color: white;
 }
 
 #login-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     width: 35vw;
     height: 50vh;
 
@@ -17,4 +39,54 @@
 
     box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.3);
     background-color: antiquewhite;
+}
+
+.input-login {
+    width: 20vw;
+    height: 35px;
+
+    margin: 10px;
+    
+    outline: none;
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 10px 10px 0 0;
+
+    background-color: antiquewhite;
+}
+
+#logo-login {
+    border-radius: 25%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+    transition: transform ease 0.3s;
+}
+
+#logo-login:hover {
+    transform: translateY(-10px);
+}
+
+#submit-login {
+    width: 10vw;
+    height: 35px;
+    
+    font-size: 1.2rem;
+    font-family: "Yu Gothic Light";
+    font-weight: 800;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+    background-color: aliceblue;
+}
+
+#forgot-link {
+    font-size: 1.2rem;
+    font-family: "Yu Gothic Light";
+    font-weight: 800;
+
+    text-decoration: none;
+    color: black;
 }
