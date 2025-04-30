@@ -3,7 +3,6 @@ class PasswordsController < ApplicationController
     before_action :set_user_by_token, only: %i[ edit update ]
 
     def new
-
     end
 
     def create
