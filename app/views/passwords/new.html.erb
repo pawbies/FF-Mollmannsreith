@@ -1,8 +1,14 @@
-<h1>Forgot your password?</h1>
+<div id="forgot-container">
+    <div id="forgot-wrapper">
+        <h1>Forgot your password?</h1>
 
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+        <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
 
-<%= form_with url: passwords_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.submit "Email reset instructions" %>
-<% end %>
+        <%= form_with url: passwords_path, id: "form-newpasswd" do |form| %>
+            <%= form.email_field :email_address, id: "input-passwd", required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
+            <%= form.submit "Passwort zurücksetzen", id: "submit-newpassword" %>
+
+            <span id="disclaimer-pw">Anleitung zur Passwortzurücksetzung wird an die angegebene E-Mail gesendet</span>
+        <% end %>
+    </div>
+</div>
