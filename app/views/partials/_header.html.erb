@@ -10,7 +10,11 @@
     </div>
 
     <div id="profile-container">
-        <span>Willkommen, <%= Current.user.full_name %></span>
-        <%= button_to "Abmelden", session_path, method: :delete %>
+        <% if authenticated? %>
+            <span>Willkommen, <%= Current.user.full_name %></span>
+            <%= button_to "Abmelden", session_path, method: :delete %>
+        <% else %>
+            <%= link_to "Anmelden", new_session_path %>
+        <% end %>
     </div>
 </header>
