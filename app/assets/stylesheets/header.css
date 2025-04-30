@@ -17,6 +17,10 @@ header {
 
     width: 20vw;
     height: 20vh;
+
+    border-radius: 0 20px 20px 0;
+
+    background-color: rgb(136, 34, 34)
 }
 
 #logo-header {
@@ -41,4 +45,38 @@ header {
 
     width: 20vw;
     height: 20vh;
+
+    border-radius: 20px 0 0 20px;
+
+    background-color: rgb(136, 34, 34)
+}
+
+#willkommen {
+    font-family: "Yu Gothic Light";
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+#abmelden {
+    width: 7.5vw;
+    height: 30px;
+
+    border: none;
+    border-radius: 7.5px;
+
+    background-color: aliceblue;
+}
+
+#anmelden {
+    width: 7.5vw;
+    height: 30px;
+
+    border: none;
+    border-radius: 7.5px;
+    text-decoration: none;
+    color: black;
+
+    text-align: center;
+
+    background-color: aliceblue;
 }
