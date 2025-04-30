@@ -8,11 +8,12 @@
     height: 80vh;
 }
 
-#heading {
+.heading {
     margin: 0;
     padding: 0;
     
-    font-family: "Yu Gothic Light";
-    font-weight: 800;
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
     font-size: 5vh;
 }
