@@ -22,20 +22,11 @@ header {
 #link-container {
     display: flex;
     flex-direction: row;
-    justify-content: center; /*space between if more links*/
+    justify-content: space-evenly;
     align-items: center;
 
     width: 60vw;
     height: 20vh;
-}
-
-#heading {
-    margin: 0;
-    padding: 0;
-    
-    font-family: "Yu Gothic Light";
-    font-weight: 400;
-    font-size: 5vh;
 }
 
 #profile-container {
