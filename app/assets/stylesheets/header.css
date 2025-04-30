@@ -1,0 +1,39 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 20vh;
+
+    background-color: brown;
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20vw;
+    height: 20vh;
+}
+
+#link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 60vw;
+    height: 20vh;
+}
+
+#profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20vw;
+    height: 20vh;
+}
