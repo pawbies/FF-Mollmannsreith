@@ -1,10 +1,11 @@
 #heading-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
     width: 100vw;
-    height: 10vh;
+    height: 80vh;
 }
 
 #heading {
