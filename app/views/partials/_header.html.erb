@@ -1,7 +1,9 @@
 <header>
 
     <div id="logo-container">
-        <%= image_tag 'logo.png', alt: "LOGO" %>
+        <%= link_to root_path do %>
+            <%= image_tag 'logo.png', alt: "LOGO" %>
+        <% end %>
     </div>
 
     <div id="link-container">
