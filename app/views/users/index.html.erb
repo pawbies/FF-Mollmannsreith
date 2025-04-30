@@ -1,0 +1,24 @@
+<h1>Benutzerliste</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Dienstgrad</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.email_address %></td>
+                <td><%= user.full_name %></td>
+                <td><%= user.rank.humanize %></td>
+                <td>
+                    <%= link_to "Ansehen", user %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
