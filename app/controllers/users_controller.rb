@@ -29,8 +29,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update user_params
-      # redirect_to @user
-      redirect_back fallback_location: @user
+      redirect_to users_path
     else
       render :edit, status: :unprocessable_entity
     end
