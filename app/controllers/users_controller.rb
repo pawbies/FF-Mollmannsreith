@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :require_chef!, only: %i[ new create edit update destroy ]
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :require_chef!, only: %i[ new create update destroy ]
+  before_action :set_user, only: %i[ show update destroy ]
 
   def index
     @users = User.all
-    @edit_user_id = params[:edit_user].presence
+    @user = User.find_by(id: params[:edit_user]) if params[:edit_user]
   end
 
   def new
@@ -24,14 +24,12 @@ class UsersController < ApplicationController
   def show
   end
 
-  def edit
-  end
-
   def update
     if @user.update user_params
       redirect_to users_path
     else
-      render :edit, status: :unprocessable_entity
+      @users = User.all
+      render :index, status: :unprocessable_entity
     end
   end
 
