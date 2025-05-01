@@ -5,6 +5,17 @@
 
         <%= link_to "Neuer Benutzer", new_user_path, id: "new-user" %>
     
+        <div id="user-errors">
+            <% if @user.present? && @user.errors.any? %>
+                <ul>
+                    <% @user.errors.full_messages.each do |error| %>
+                        <li><%= error %></li>
+                    <% end %>
+                </ul>
+            <% end %>
+        </div>
+
+
         <table id="usertable">
             <thead id="userhead">
                 <th class="userth">Email</th>
@@ -16,8 +27,8 @@
             <tbody>
                 <% @users.each do |user| %>
                     <tr>
-                        <% if @edit_user_id.present? && @edit_user_id.to_i == user.id %>
-                            <%= form_with model: user, target: "_top" do |form| %>
+                        <% if @user.present? && @user.id == user.id %>
+                            <%= form_with model: @user, target: "_top" do |form| %>
                                 <td class="edittd"> <%= form.email_field :email_address, placeholder: "E-Mail", class: "editinput" %> </td>
                                 <td class="edittd"> <%= form.text_field :firstname, placeholder: "Vorname", class: "editinput" %>
                                 <%= form.text_field :lastname, placeholder: "Nachname", class: "editinput" %> </td>
