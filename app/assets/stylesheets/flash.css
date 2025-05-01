@@ -13,7 +13,7 @@
 
     transition: all 0.3s ease-in-out;
 
-    background-color: #39525a !important;
+    background-color: #413921 !important;
 }
 
 .messages-container.show {
@@ -50,4 +50,5 @@
 
 #alert {
     color: red;
+    font-weight: 900;
 }

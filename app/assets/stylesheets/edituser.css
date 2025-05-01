@@ -33,6 +33,8 @@
     border: none;
     border-radius: 5px;
 
+    border-bottom: 2px solid black;
+
     background-color: white;
 
 }
