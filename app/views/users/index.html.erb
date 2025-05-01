@@ -4,7 +4,7 @@
         <h1>Benutzerliste</h1>
 
         <%= link_to "Neuer Benutzer", new_user_path, id: "new-user" %>
-
+    
         <table id="usertable">
             <thead id="userhead">
                 <th class="userth">Email</th>
@@ -16,19 +16,31 @@
             <tbody>
                 <% @users.each do |user| %>
                     <tr>
-                        <td class="usertd"><%= user.email_address %></td>
-                        <td class="usertd"><%= user.full_name %></td>
-                        <td class="usertd"><%= user.rank.germanize %></td>
-                        <td class="usertd" style="display: flex;">
-                            <%= link_to "Ansehen", user, class: "action-btn" %>
-                            <%= link_to "Bearbeiten", edit_user_path(user), class: "action-btn" %>
-                            <%= button_to "Löschen", user, 
-                              method: :delete, 
-                              id: "delete-user", 
-                              class: "action-btn",
-                              data: { turbo_confirm: "#{user.rank.germanize} #{user.full_name} wirklich löschen?" } 
-                            %>
+                        <% if @edit_user_id.present? && @edit_user_id.to_i == user.id %>
+                        <td colspan="4">
+                            <%= form_with model: user, target: "_top" do |form| %>
+                                <%= form.email_field :email_address, placeholder: "E-mail" %>
+                                <%= form.text_field :firstname, placeholder: "Vorname" %>
+                                <%= form.text_field :lastname, placeholder: "Nachname" %>
+                                <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.germanize, rank ] }, {}, {} %>
+                                <%= form.submit "Update" %>
+                            <% end %>
                         </td>
+                        <% else %>
+                            <td class="usertd"><%= user.email_address %></td>
+                            <td class="usertd"><%= user.full_name %></td>
+                            <td class="usertd"><%= user.rank.germanize %></td>
+                            <td class="usertd" style="display: flex;">
+                                <%= link_to "Ansehen", user, class: "action-btn", target: "_top" %>
+                                <%= link_to "Bearbeiten", users_path(edit_user: user.id), class: "action-btn" %>
+                                <%= button_to "Löschen", user, 
+                                method: :delete, 
+                                id: "delete-user", 
+                                class: "action-btn",
+                                data: { turbo_confirm: "#{user.rank.germanize} #{user.full_name} wirklich löschen?" } 
+                                %>
+                            </td>
+                        <% end %>
                     </tr>
                 <% end %>
             </tbody>

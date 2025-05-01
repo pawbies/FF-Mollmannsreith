@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @edit_user_id = params[:edit_user].presence
   end
 
   def new
@@ -28,7 +29,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update user_params
-      redirect_to users_path
+      # redirect_to @user
+      redirect_back fallback_location: @user
     else
       render :edit, status: :unprocessable_entity
     end
