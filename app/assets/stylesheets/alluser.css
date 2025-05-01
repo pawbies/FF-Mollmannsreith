@@ -65,9 +65,16 @@ tr:hover {
 }
 
 .usertd {
+    width: 25%;
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
+}
+
+#actionstd {
+    display: flex;
+
+    border: none;
 }
 
 .action-btn {

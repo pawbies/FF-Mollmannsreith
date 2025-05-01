@@ -17,21 +17,19 @@
                 <% @users.each do |user| %>
                     <tr>
                         <% if @edit_user_id.present? && @edit_user_id.to_i == user.id %>
-                        <!-- <td colspan="4"> -->
                             <%= form_with model: user, target: "_top" do |form| %>
                                 <td class="edittd"> <%= form.email_field :email_address, placeholder: "E-Mail", class: "editinput" %> </td>
                                 <td class="edittd"> <%= form.text_field :firstname, placeholder: "Vorname", class: "editinput" %>
                                 <%= form.text_field :lastname, placeholder: "Nachname", class: "editinput" %> </td>
                                 <td class="edittd"> <%= form.select :rank, User.ranks.keys.map { |rank| [ rank.germanize, rank ] }, {}, class: "editinput", id: "editselect" %> </td>
-                                <td class="edittd"> <%= form.submit "Update", class: "editinput", id: "editsubmit" %> </td>
+                                <td class="edittd"> <%= form.submit "Aktualisieren", class: "editinput", id: "editsubmit" %> </td>
                             <% end %>
-                        <!-- </td> -->
                         <% else %>
                             <td class="usertd"><%= user.email_address %></td>
                             <td class="usertd"><%= user.full_name %></td>
                             <td class="usertd"><%= user.rank.germanize %></td>
-                            <td class="usertd" style="display: flex;">
-                                <%= link_to "Ansehen", user, class: "action-btn", target: "_top" %>
+                            <td class="usertd" id="actionstd">
+                                <!-- <%= link_to "Ansehen", user, class: "action-btn", target: "_top" %> -->
                                 <%= link_to "Bearbeiten", users_path(edit_user: user.id), class: "action-btn" %>
                                 <%= button_to "Löschen", user, 
                                 method: :delete, 
