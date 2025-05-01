@@ -4,7 +4,11 @@
     align-items: center;
     text-align: center;
 
+    font-family: "Yu Gothic Light";
+    font-weight: 800;
+
     width: 100vw;
+    height: auto;
 
 }
 
@@ -20,12 +24,24 @@
 }
 
 #usertable {
-    width: 80vw;
+    width: 70vw;
 
     border-collapse: collapse;
 
     font-family: "Yu Gothic Light";
     font-weight: 800;
+}
+
+#table-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 80vw;
+    height: 80vh;
+
+    background-color: antiquewhite;
 }
 
 #userhead {
@@ -35,11 +51,13 @@
 .userth {
     padding: 5px 0;
     font-size: 1.2rem;
+    background-color: beige;
 }
 
 tr {
     border: 2px solid #ddd;
     transition: background-color 0.2s;
+    background-color: #ffffff;
 }
 
 tr:hover {
