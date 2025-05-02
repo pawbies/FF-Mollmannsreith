@@ -41,7 +41,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 
     width: 20vw;
     height: 20vh;
@@ -49,6 +49,18 @@ header {
     border-radius: 20px 0 0 20px;
 
     background-color: rgb(136, 34, 34)
+}
+
+#profile-wrapper {
+    width: 70%;
+    height: 70%;
+
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+
+    color: white;
+
+    background-color: rgb(104, 25, 25);
 }
 
 #willkommen {
@@ -73,10 +85,18 @@ header {
 
     border: none;
     border-radius: 7.5px;
+
+    font-family: "Yu Gothic light";
+    font-weight: 800;
     text-decoration: none;
     color: black;
 
     text-align: center;
 
     background-color: aliceblue;
+}
+
+#name {
+    margin: 0;
+    padding: 0;
 }
