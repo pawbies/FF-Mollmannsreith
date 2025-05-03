@@ -30,7 +30,7 @@ header {
 #link-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     width: 60vw;
@@ -99,4 +99,32 @@ header {
 #name {
     margin: 0;
     padding: 0;
+}
+
+#fahrtenbuch-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 30vw;
+    height: 20vh;
+
+    
+}
+
+#link-fahrtenbuch {
+    font-size: 1.4rem;
+    font-family: "Yu Gothic Light";
+    font-weight: 800;
+
+    text-decoration: none;
+    color: white;
+
+    transition: font-size ease 0.1s;
+}
+
+#link-fahrtenbuch:hover {
+    font-size: 2rem;
+    text-decoration: underline;
 }
