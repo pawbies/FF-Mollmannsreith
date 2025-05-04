@@ -15,7 +15,7 @@
     <div id="profile-container">
         <% if authenticated? %>
             <div id="profile-wrapper">
-                <span id="willkommen">Willkommen, <p id="name"><%= Current.user.full_name %></p></span>
+                <span id="willkommen"><div id="grow-heading">Willkommen,</div> <p id="name"><%= Current.user.full_name %></p></span>
                 <%= button_to "Abmelden", session_path, method: :delete, id: "abmelden" %>
             </div>
         <% else %>

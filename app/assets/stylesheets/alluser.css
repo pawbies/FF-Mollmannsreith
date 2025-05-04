@@ -21,6 +21,12 @@
     border-radius: 5px;
 
     background-color: rgb(42, 61, 77);
+    transition: all ease 0.3s;
+}
+
+#new-user:hover {
+    padding: 22px;
+    background-color: rgb(29, 43, 57);
 }
 
 #usertable {
