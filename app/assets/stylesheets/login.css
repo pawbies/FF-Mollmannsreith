@@ -73,11 +73,12 @@
 #logo-login {
     border-radius: 25%;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
-    transition: transform ease 0.3s;
+    transition: all ease 0.3s;
 }
 
 #logo-login:hover {
     transform: translateY(-10px);
+    transform: scale(1.2);
 }
 
 #submit-login {
@@ -95,7 +96,7 @@
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
     background-color: aliceblue;
 
-    transition: all ease 0.5s;
+    
 }
 
 #submit-login:hover {
@@ -110,4 +111,9 @@
 
     text-decoration: none;
     color: black;
+    transition: all ease 0.5s;
+}
+
+#forgot-link:hover {
+    transform: scale(1.7, 0.7);
 }
