@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :vehicles
   resources :users, except: :edit
   resource :session
   resources :passwords, param: :token
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-  get "log" => "logs#index"
-  get "log/:id" => "logs#show"
+  get "logs" => "logs#index"
+  get "logs/:id" => "logs#show", as: :log
 end

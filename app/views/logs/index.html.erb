@@ -1,1 +1,19 @@
 <h1>Fahrtenbuchliste</h1>
+
+<div data-controller="add-vehicle">
+    <button data-action="add-vehicle#show_form">Gefährt hinzufügen</button>
+    <%= form_with model: @new_vehicle, html: { style: "display: none;", data: { add_vehicle_target: "form" } } do |form| %>
+        <%= form.text_field :name, placeholder: "Name" %>
+        <%= form.file_field :image, accept: "image/png,image/jpeg" %>
+        <%= form.submit "Hinzufügen" %>
+    <% end %> 
+</div>
+
+<ul>
+    <% @vehicles.each do |vehicle| %>
+        <li>
+            <%= link_to vehicle.name, log_path(vehicle) %>
+            <%= image_tag vehicle.image.presence || "default_vehicle.jpg", size: "500x500" %>
+        </li>
+    <% end %>
+</ul>
